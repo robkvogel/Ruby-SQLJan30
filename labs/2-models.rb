@@ -5,7 +5,7 @@
 
 # **************************
 # DON'T CHANGE OR MOVE
-Salesperson.destroy_all
+SalesPerson.destroy_all
 # **************************
 
 # Lab 2: Models
@@ -21,12 +21,46 @@ Salesperson.destroy_all
 
 # 2. insert 1-2 rows in salespeople table.
 
+new_salesperson = SalesPerson.new
+
+#puts new_company.inspect
+new_salesperson["first_name"] = "Peter"
+new_salesperson["last_name"] = "Parker"
+new_salesperson["email"] = "Spiderman@gmail.com"
+new_salesperson.save
+
+new_salesperson = SalesPerson.new
+
+new_salesperson["first_name"] = "Miles"
+new_salesperson["last_name"] = "Morales"
+new_salesperson["email"] = "ManlySpidern@gmail.com"
+new_salesperson.save
+
+
 # 3. write code to display how many salespeople rows are in the database
+
+puts "Now there are #{SalesPerson.all.count} salespeople"
+
+salespeople = SalesPerson.all
+
+#for person in salespeople
+#puts "#{"first_name"}  #{"last_name"}
+#end
+
+#Need to find real code for printing names in Ben's dump
 
 # ---------------------------------
 # Salespeople: 2
 
 # 4. modify/update column data for a row in the salespeople table.
+
+update = SalesPerson.find_by({"first_name" => "Peter"})
+update["last_name"] = "stinker"
+update.save
+
+#puts "Apple is is #{apple.inspect}"
+
+
 
 # CHALLENGE:
 # 5. write code to display each salesperson's full name
